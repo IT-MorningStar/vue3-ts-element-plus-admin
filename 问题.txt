@@ -1,0 +1,10 @@
+1、[vite] Internal Server Error Failed to load plugin '@typescript-eslint' declared in '.eslintrc.js': Unexpected token '??='
+
+npm i --save-dev typescript @typescript-eslint/eslint-plugin@5.6.0 @typescript-eslint/parser@5.6.0 eslint@7.32.0
+
+
+
+
+
+
+
