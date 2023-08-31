@@ -24,7 +24,7 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
       {
         path: '/redirect/:path(.*)',
         name: 'Redirect',
-        component: () => import('@/views/Redirect/Redirect.vue'),
+        component: () => import('@/views/frame/Redirect/Redirect.vue'),
         meta: {}
       }
     ],
@@ -89,6 +89,28 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
     ]
   },
   {
+    path: '/point',
+    component: Layout,
+    redirect: '/point/list',
+    name: 'PointManager',
+    meta: {
+      title: t('router.pointManager'),
+      icon: 'ant-design:dashboard-filled',
+      alwaysShow: true
+    },
+    children: [
+      {
+        path: 'list',
+        component: () => import('@/views/point/index.vue'),
+        name: 'list',
+        meta: {
+          title: t('router.pointList'),
+          noCache: true
+        }
+      }
+    ]
+  },
+  {
     path: '/external-link',
     component: Layout,
     meta: {},
@@ -112,7 +134,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
     children: [
       {
         path: 'index',
-        component: () => import('@/views/Guide/Guide.vue'),
+        component: () => import('@/views/frame/Guide/Guide.vue'),
         name: 'GuideDemo',
         meta: {
           title: t('router.guide'),
@@ -143,7 +165,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
         children: [
           {
             path: 'default-form',
-            component: () => import('@/views/Components/Form/DefaultForm.vue'),
+            component: () => import('@/views/frame/Components/Form/DefaultForm.vue'),
             name: 'DefaultForm',
             meta: {
               title: t('router.defaultForm')
@@ -151,7 +173,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
           },
           {
             path: 'use-form',
-            component: () => import('@/views/Components/Form/UseFormDemo.vue'),
+            component: () => import('@/views/frame/Components/Form/UseFormDemo.vue'),
             name: 'UseForm',
             meta: {
               title: 'UseForm'
@@ -171,7 +193,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
         children: [
           {
             path: 'default-table',
-            component: () => import('@/views/Components/Table/DefaultTable.vue'),
+            component: () => import('@/views/frame/Components/Table/DefaultTable.vue'),
             name: 'DefaultTable',
             meta: {
               title: t('router.defaultTable')
@@ -179,7 +201,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
           },
           {
             path: 'use-table',
-            component: () => import('@/views/Components/Table/UseTableDemo.vue'),
+            component: () => import('@/views/frame/Components/Table/UseTableDemo.vue'),
             name: 'UseTable',
             meta: {
               title: 'UseTable'
@@ -187,7 +209,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
           },
           {
             path: 'tree-table',
-            component: () => import('@/views/Components/Table/TreeTable.vue'),
+            component: () => import('@/views/frame/Components/Table/TreeTable.vue'),
             name: 'TreeTable',
             meta: {
               title: t('router.treeTable')
@@ -195,7 +217,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
           },
           {
             path: 'table-image-preview',
-            component: () => import('@/views/Components/Table/TableImagePreview.vue'),
+            component: () => import('@/views/frame/Components/Table/TableImagePreview.vue'),
             name: 'TableImagePreview',
             meta: {
               title: t('router.PicturePreview')
@@ -215,7 +237,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
         children: [
           {
             path: 'editor',
-            component: () => import('@/views/Components/Editor/Editor.vue'),
+            component: () => import('@/views/frame/Components/Editor/Editor.vue'),
             name: 'Editor',
             meta: {
               title: t('router.richText')
@@ -225,7 +247,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'search',
-        component: () => import('@/views/Components/Search.vue'),
+        component: () => import('@/views/frame/Components/Search.vue'),
         name: 'Search',
         meta: {
           title: t('router.search')
@@ -233,7 +255,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'descriptions',
-        component: () => import('@/views/Components/Descriptions.vue'),
+        component: () => import('@/views/frame/Components/Descriptions.vue'),
         name: 'Descriptions',
         meta: {
           title: t('router.descriptions')
@@ -241,7 +263,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'image-viewer',
-        component: () => import('@/views/Components/ImageViewer.vue'),
+        component: () => import('@/views/frame/Components/ImageViewer.vue'),
         name: 'ImageViewer',
         meta: {
           title: t('router.imageViewer')
@@ -249,7 +271,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'dialog',
-        component: () => import('@/views/Components/Dialog.vue'),
+        component: () => import('@/views/frame/Components/Dialog.vue'),
         name: 'Dialog',
         meta: {
           title: t('router.dialog')
@@ -257,7 +279,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'icon',
-        component: () => import('@/views/Components/Icon.vue'),
+        component: () => import('@/views/frame/Components/Icon.vue'),
         name: 'Icon',
         meta: {
           title: t('router.icon')
@@ -265,7 +287,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'echart',
-        component: () => import('@/views/Components/Echart.vue'),
+        component: () => import('@/views/frame/Components/Echart.vue'),
         name: 'Echart',
         meta: {
           title: t('router.echart')
@@ -273,7 +295,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'count-to',
-        component: () => import('@/views/Components/CountTo.vue'),
+        component: () => import('@/views/frame/Components/CountTo.vue'),
         name: 'CountTo',
         meta: {
           title: t('router.countTo')
@@ -281,7 +303,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'qrcode',
-        component: () => import('@/views/Components/Qrcode.vue'),
+        component: () => import('@/views/frame/Components/Qrcode.vue'),
         name: 'Qrcode',
         meta: {
           title: t('router.qrcode')
@@ -289,7 +311,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'highlight',
-        component: () => import('@/views/Components/Highlight.vue'),
+        component: () => import('@/views/frame/Components/Highlight.vue'),
         name: 'Highlight',
         meta: {
           title: t('router.highlight')
@@ -297,7 +319,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'infotip',
-        component: () => import('@/views/Components/Infotip.vue'),
+        component: () => import('@/views/frame/Components/Infotip.vue'),
         name: 'Infotip',
         meta: {
           title: t('router.infotip')
@@ -305,7 +327,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'input-password',
-        component: () => import('@/views/Components/InputPassword.vue'),
+        component: () => import('@/views/frame/Components/InputPassword.vue'),
         name: 'InputPassword',
         meta: {
           title: t('router.inputPassword')
@@ -326,7 +348,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
     children: [
       {
         path: 'multiple-tabs',
-        component: () => import('@/views/Function/MultipleTabs.vue'),
+        component: () => import('@/views/frame/Function/MultipleTabs.vue'),
         name: 'MultipleTabs',
         meta: {
           title: t('router.multipleTabs')
@@ -334,7 +356,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'multiple-tabs-demo/:id',
-        component: () => import('@/views/Function/MultipleTabsDemo.vue'),
+        component: () => import('@/views/frame/Function/MultipleTabsDemo.vue'),
         name: 'MultipleTabsDemo',
         meta: {
           hidden: true,
@@ -358,7 +380,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
     children: [
       {
         path: 'useWatermark',
-        component: () => import('@/views/hooks/useWatermark.vue'),
+        component: () => import('@/views/frame/hooks/useWatermark.vue'),
         name: 'UseWatermark',
         meta: {
           title: 'useWatermark'
@@ -366,7 +388,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'useTagsView',
-        component: () => import('@/views/hooks/useTagsView.vue'),
+        component: () => import('@/views/frame/hooks/useTagsView.vue'),
         name: 'UseTagsView',
         meta: {
           title: 'useTagsView'
@@ -374,7 +396,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       }
       // {
       //   path: 'useCrudSchemas',
-      //   component: () => import('@/views/hooks/useCrudSchemas.vue'),
+      //   component: () => import('@/views/frame/hooks/useCrudSchemas.vue'),
       //   name: 'UseCrudSchemas',
       //   meta: {
       //     title: 'useCrudSchemas'
@@ -414,7 +436,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
               {
                 path: 'menu1-1-1',
                 name: 'Menu111',
-                component: () => import('@/views/Level/Menu111.vue'),
+                component: () => import('@/views/frame/Level/Menu111.vue'),
                 meta: {
                   title: t('router.menu111')
                 }
@@ -424,7 +446,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
           {
             path: 'menu1-2',
             name: 'Menu12',
-            component: () => import('@/views/Level/Menu12.vue'),
+            component: () => import('@/views/frame/Level/Menu12.vue'),
             meta: {
               title: t('router.menu12')
             }
@@ -434,7 +456,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       {
         path: 'menu2',
         name: 'Menu2',
-        component: () => import('@/views/Level/Menu2.vue'),
+        component: () => import('@/views/frame/Level/Menu2.vue'),
         meta: {
           title: t('router.menu2')
         }
@@ -454,7 +476,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
     children: [
       {
         path: 'example-dialog',
-        component: () => import('@/views/Example/Dialog/ExampleDialog.vue'),
+        component: () => import('@/views/frame/Example/Dialog/ExampleDialog.vue'),
         name: 'ExampleDialog',
         meta: {
           title: t('router.exampleDialog')
@@ -462,7 +484,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'example-page',
-        component: () => import('@/views/Example/Page/ExamplePage.vue'),
+        component: () => import('@/views/frame/Example/Page/ExamplePage.vue'),
         name: 'ExamplePage',
         meta: {
           title: t('router.examplePage')
@@ -470,7 +492,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'example-add',
-        component: () => import('@/views/Example/Page/ExampleAdd.vue'),
+        component: () => import('@/views/frame/Example/Page/ExampleAdd.vue'),
         name: 'ExampleAdd',
         meta: {
           title: t('router.exampleAdd'),
@@ -483,7 +505,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'example-edit',
-        component: () => import('@/views/Example/Page/ExampleEdit.vue'),
+        component: () => import('@/views/frame/Example/Page/ExampleEdit.vue'),
         name: 'ExampleEdit',
         meta: {
           title: t('router.exampleEdit'),
@@ -496,7 +518,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'example-detail',
-        component: () => import('@/views/Example/Page/ExampleDetail.vue'),
+        component: () => import('@/views/frame/Example/Page/ExampleDetail.vue'),
         name: 'ExampleDetail',
         meta: {
           title: t('router.exampleDetail'),
@@ -522,7 +544,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
     children: [
       {
         path: '404-demo',
-        component: () => import('@/views/Error/404.vue'),
+        component: () => import('@/views/frame/Error/404.vue'),
         name: '404Demo',
         meta: {
           title: '404'
@@ -530,7 +552,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: '403-demo',
-        component: () => import('@/views/Error/403.vue'),
+        component: () => import('@/views/frame/Error/403.vue'),
         name: '403Demo',
         meta: {
           title: '403'
@@ -538,7 +560,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: '500-demo',
-        component: () => import('@/views/Error/500.vue'),
+        component: () => import('@/views/frame/Error/500.vue'),
         name: '500Demo',
         meta: {
           title: '500'
@@ -559,7 +581,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
     children: [
       {
         path: 'department',
-        component: () => import('@/views/Authorization/Department/Department.vue'),
+        component: () => import('@/views/frame/Authorization/Department/Department.vue'),
         name: 'Department',
         meta: {
           title: t('router.department')
@@ -567,7 +589,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'user',
-        component: () => import('@/views/Authorization/User/User.vue'),
+        component: () => import('@/views/frame/Authorization/User/User.vue'),
         name: 'User',
         meta: {
           title: t('router.user')
@@ -575,7 +597,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'menu',
-        component: () => import('@/views/Authorization/Menu/Menu.vue'),
+        component: () => import('@/views/frame/Authorization/Menu/Menu.vue'),
         name: 'Menu',
         meta: {
           title: t('router.menuManagement')
@@ -583,7 +605,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'role',
-        component: () => import('@/views/Authorization/Role/Role.vue'),
+        component: () => import('@/views/frame/Authorization/Role/Role.vue'),
         name: 'Role',
         meta: {
           title: t('router.role')
@@ -591,7 +613,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       },
       {
         path: 'test',
-        component: () => import('@/views/Authorization/Test/Test.vue'),
+        component: () => import('@/views/frame/Authorization/Test/Test.vue'),
         name: 'Test',
         meta: {
           title: t('router.permission'),

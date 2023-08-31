@@ -127,6 +127,8 @@ export default {
     dashboard: '首页',
     analysis: '分析页',
     workplace: '工作台',
+    pointManager: '点位管理',
+    pointList: '点位列表',
     guide: '引导',
     component: '组件',
     icon: '图标',

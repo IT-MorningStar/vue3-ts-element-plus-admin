@@ -127,6 +127,8 @@ export default {
     dashboard: 'Dashboard',
     analysis: 'Analysis',
     workplace: 'Workplace',
+    pointManager: 'PointManager',
+    pointList:'PointList',
     guide: 'Guide',
     component: 'Component',
     icon: 'Icon',
